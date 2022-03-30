@@ -7,6 +7,7 @@
         name="taille"
         placeholder="Indiquer votre taille en cm"
         min="1"
+        max="250"
         required
       />
       <input
@@ -15,6 +16,7 @@
         v-model="imc.poids"
         placeholder="Indiquer votre poids en kg"
         min="1"
+        max="250"
         required
       />
       <input type="hidden" name="imc" value="{{store.imc}}" />
@@ -35,7 +37,7 @@ const store = useImcStore();
 
 function calculImc() {
   let calculateImc = Math.round((imc.poids / Math.pow(imc.taille, 2)) * 10000);
-  
+
   store.imc = calculateImc;
   store.taille = imc.taille;
   store.poids = imc.poids;
