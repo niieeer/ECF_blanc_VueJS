@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <header>
-      <nav class="wrapper">
-        <RouterLink to="/">Calculateur d’IMC</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <nav class="wrapper">
+      <RouterLink to="/">Calculateur d’IMC</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+    </nav>
   </header>
 
   <RouterView />

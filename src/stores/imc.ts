@@ -4,7 +4,7 @@ export const useImcStore = defineStore({
   id: "imc",
   state: () => ({
     poids: 0,
-    taille: 0,
+    taille: 0 * 100,
     imc: 0,
   }),
   getters: {

@@ -14,8 +14,8 @@
         <th>Indice de Masse Corporelle</th>
       </tr>
       <tr>
+        <td>{{ store.poids }}kg</td>
         <td>{{ store.taille }} cm</td>
-        <td>{{ store.poids }} kg</td>
         <td>{{ store.imc }}</td>
       </tr>
     </table>

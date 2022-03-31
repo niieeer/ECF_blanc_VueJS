@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import FormImc from "../components/FormImc.vue";
 import Table1 from "../components/Table.vue";
+import { useImcStore } from "@/stores/imc"; 
+const store = useImcStore();
+
 </script>
 
 <template>
@@ -15,7 +18,7 @@ import Table1 from "../components/Table.vue";
       </p>
       <FormImc />
     </section>
-    <Table1 />
+    <Table1 v-if="store.imc > 1" />
   </main>
 </template>
 

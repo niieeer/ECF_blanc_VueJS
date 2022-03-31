@@ -16,10 +16,9 @@
         v-model="imc.poids"
         placeholder="Indiquer votre poids en kg"
         min="1"
-        max="250"
+        max="400"
         required
       />
-      <input type="hidden" name="imc" value="{{store.imc}}" />
       <button>Calculer</button>
     </form>
   </div>
@@ -33,14 +32,20 @@ const imc = reactive({
   taille: 0,
   poids: 0,
 });
+
 const store = useImcStore();
 
 function calculImc() {
-  let calculateImc = Math.round((imc.poids / Math.pow(imc.taille, 2)) * 10000);
-
-  store.imc = calculateImc;
-  store.taille = imc.taille;
-  store.poids = imc.poids;
+  if (Number.isInteger(imc.poids && imc.taille)) {
+    let calculateImc = Math.round(
+      (imc.poids / Math.pow(imc.taille, 2)) * 10000
+    );
+    store.imc = calculateImc;
+    store.taille = imc.taille;
+    store.poids = imc.poids;
+  } else {
+    console.log("c'est pas un nombre mon reuf");
+  }
 }
 </script>
 
